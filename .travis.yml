@@ -4,5 +4,6 @@ php:
 install:
   - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
+  - composer install
   - phpunit
   - phpcs --standard=PSR2 .

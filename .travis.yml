@@ -6,5 +6,6 @@ script:
   - phpenv rehash
   - composer install
   - phpunit
-  - phpcs --standard=PSR2 .
+  - phpcs --standard=PSR2 src/
+  - phpcs --standard=PSR2 tests/
   - bin/atoum --test-all

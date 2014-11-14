@@ -12,6 +12,5 @@ class StubObject
         array $required,
         $optional = 'test'
     ) {
-        var_dump($object, $required, $optional);
     }
 }

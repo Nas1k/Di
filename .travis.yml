@@ -1,0 +1,8 @@
+language: php
+php:
+  - 5.5
+install:
+  - pyrus install pear/PHP_CodeSniffer
+  - phpenv rehash
+  - phpunit
+  - phpcs --standard=PSR2 .

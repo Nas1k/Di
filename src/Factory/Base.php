@@ -116,14 +116,14 @@ class Base implements Factory
      */
     protected function resolveArguments($requestedType, $parameters, $arguments)
     {
-        $requestedArguments = [];
+        $resolvedArguments = [];
         $arguments = count($arguments)
             ? array_replace($this->config->getArguments($requestedType), $arguments)
             : $this->config->getArguments($requestedType);
 
         foreach ($parameters as $parameter) {
             list($paramName, $paramType, $paramRequired, $paramDefault) = $parameter;
-            $argument = null;
+
             if (array_key_exists($paramName, $arguments)) {
                 $argument = $arguments[$paramName];
             } elseif ($paramRequired) {
@@ -161,7 +161,7 @@ class Base implements Factory
             $resolvedArguments[] = $argument;
         }
 
-        return $requestedArguments;
+        return $resolvedArguments;
     }
 
     /**

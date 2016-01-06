@@ -6,7 +6,7 @@ before_script:
   - composer install
 script:
   - phpunit
-  - phpcs --standard=PSR2 src/
-  - phpcs --standard=PSR2 tests/
+  - vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 src/
+  - vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=PSR2 tests/
 after_script:
   - php vendor/bin/coveralls -v
